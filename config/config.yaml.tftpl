@@ -346,7 +346,7 @@ vertex_ai:
           use_private_service_access: false
           # The `state` defines the state of the pipeline.
           # In case you don't want to schedule the pipeline, set the state to `PAUSED`.
-          state: PAUSED # possible states ACTIVE or PAUSED
+          state: ACTIVE # possible states ACTIVE or PAUSED
         pipeline_parameters:
           project_id: "${project_id}"
           location: "${location}"
@@ -707,7 +707,7 @@ vertex_ai:
           use_private_service_access: false
           # The `state` defines the state of the pipeline.
           # In case you don't want to schedule the pipeline, set the state to `PAUSED`.
-          state: PAUSED # possible states ACTIVE or PAUSED
+          state: ACTIVE # possible states ACTIVE or PAUSED
         # These are pipeline parameters that will be passed to the pipeline to be recompiled
         pipeline_parameters:
           project: "${project_id}"
@@ -765,6 +765,11 @@ vertex_ai:
           weight_column: null
           additional_experiments: null
           export_additional_model_without_custom_ops: false
+          distill_batch_predict_machine_type: "n1-standard-4"
+          transform_dataflow_machine_type: "n1-standard-4"
+          stage_1_num_parallel_trials: 2
+          stage_2_num_parallel_trials: 2
+          stats_and_example_gen_dataflow_machine_type: "n1-standard-4"
           # Override the study spec parameters in case you want to restrict hyperparameter search space. Including `model_type`.
           # In this case, for Value Based Bidding, we're looking for a perfect fit using a tree based model.
           # Don't use when parameter `apply_feature_selection_tuning` is `true`
@@ -789,6 +794,7 @@ vertex_ai:
           - device_web_browser_version
           - device_os_version
           - will_purchase
+          - user_ltv_revenue
         pipeline_parameters_substitutions: null 
       prediction:
         name: "purchase-propensity-prediction-pl"
@@ -810,7 +816,7 @@ vertex_ai:
           use_private_service_access: false
           # The `state` defines the state of the pipeline.
           # In case you don't want to schedule the pipeline, set the state to `PAUSED`.
-          state: PAUSED # possible states ACTIVE or PAUSED
+          state: ACTIVE # possible states ACTIVE or PAUSED
         pipeline_parameters:
           project_id: "${project_id}"
           location: "${cloud_region}"
