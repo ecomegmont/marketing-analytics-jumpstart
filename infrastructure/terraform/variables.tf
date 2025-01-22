@@ -285,7 +285,7 @@ variable "pipeline_configuration" {
     feature-creation-purchase-propensity = {
       execution = {
         schedule = {
-          state                    = "PAUSED"
+          state                    = "ACTIVE"
         }
       }
     }
@@ -332,12 +332,12 @@ variable "pipeline_configuration" {
     purchase_propensity = {
       training = {
         schedule = {
-          state                    = "PAUSED"
+          state                    = "ACTIVE"
         }
       }
       prediction = {
         schedule = {
-          state                    = "PAUSED"
+          state                    = "ACTIVE"
         }
       }
     }

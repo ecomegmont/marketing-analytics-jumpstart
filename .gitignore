@@ -209,3 +209,5 @@ python/*.yaml
 
 # Google credential files
 .credentials/
+
+settings*.json

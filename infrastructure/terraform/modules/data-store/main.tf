@@ -57,6 +57,6 @@ module "dataform-workflow-prod" {
   # Observe that the GA4 BigQuery Export Schedule documentation 
   # https://support.google.com/analytics/answer/9358801?hl=en#:~:text=A%20full%20export%20of%20data,(see%20Streaming%20export%20below).
   # Check https://crontab.guru/#0_5-23/2_*_*_* to see next execution times.
-  daily_schedule = "0 5-23/2 * * *"
+  daily_schedule = "0 8 * * *"
   time_zone      = var.time_zone
 }
